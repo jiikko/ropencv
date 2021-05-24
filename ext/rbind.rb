@@ -4,6 +4,7 @@ require 'yaml'
 
 require File.join(File.dirname(__FILE__),'helper.rb')
 
+print "#################################", ARGV[0]
 major,minor,revision,opencv_headers = find_opencv(ARGV[0])
 opencv_version = "#{major}.#{minor}.#{revision}"
 Rbind.log.warn "found opencv #{opencv_version}"
