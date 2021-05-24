@@ -93,8 +93,10 @@ end
 
 # find opencv version and headers needed to be parsed by rbind
 def find_opencv(hint)
+    puts "hint: #{hint}"
     hint =~ /\[(.*)\]\[v(.*)\(\)\]/
     paths = [$1]
+    puts "hint!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: #{hint}, paths: #{$1}."
     opencv_version = $2
     if !opencv_version || !paths
         raise "hint #{hint} is not encoding opencv loaction and version. It must have the format [PATH][vMAJOR.MINRO.REVISION()]"
